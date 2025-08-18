@@ -1,9 +1,16 @@
 import React from 'react'
+// import MathPro from '../pratice/MathPro'
+import ArrPro from '../pratice/ArrPro'
+import Compiler from '../pratice/Compiler'
 
 function Reports() {
   return (
     <>
-    <h1 className='text-2xl font-bold'>Hello Reports</h1>
+   
+
+    {/* <MathPro/> */}
+    {/* <Compiler/> */}
+    <ArrPro/>
     </>
   )
 }

@@ -13,14 +13,23 @@ import {
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
+  // const [isProjectsOpen, setIsProjectsOpen] = useState(false);
+  const [dropdowns, setDropdowns] = useState({
+    projects: false,
+    methods: false,
+  });
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
-  const toggleProjectsDropdown = () => {
-    if (!isOpen) return;
-    setIsProjectsOpen(!isProjectsOpen);
-  };
+  const toggleProjectsDropdown = (id) => {
+  if (!isOpen) return;
+
+  setDropdowns((prev) => ({
+    ...prev,
+    [id]: !prev[id],
+  }));
+};
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -66,7 +75,7 @@ export default function Sidebar() {
       {/* Sidebar */}
       <div
         className={`fixed md:relative top-0 left-0 h-full bg-[#f4f7fb] text-white transition-all duration-300 flex flex-col z-30 ${
-          isOpen ? "w-64" : "w-0"
+          isOpen ? "w-60" : "w-0"
         } overflow-hidden`}
       >
         <div className="mr-5 mt-4 flex items-center justify-center">
@@ -89,7 +98,7 @@ export default function Sidebar() {
           </NavLink>
           <li className="group relative list-none">
             <div
-              onClick={toggleProjectsDropdown}
+              onClick={() => toggleProjectsDropdown("projects")}
               className="flex items-center justify-between gap-2 hover:bg-[#fff] text-sm text-gray-300 px-3 py-2 rounded-md cursor-pointer transition"
             >
               <div className="flex items-center gap-3 text-gray-900">
@@ -103,28 +112,77 @@ export default function Sidebar() {
               {isOpen && (
                 <HiChevronDown
                   className={`text-sm transition-transform duration-200 text-gray-900 ${
-                    isProjectsOpen ? "rotate-180" : ""
+                    dropdowns.projects ? "rotate-180" : ""
                   }`}
                 />
               )}
             </div>
 
-            {(isProjectsOpen && isOpen) || !isOpen ? (
+            {(dropdowns.projects && isOpen) || !isOpen ? (
               <ul
-                className={`text-sm mt-1 space-y-1   ${
+                className={`text-sm mt-1 space-y-1 ${
                   isOpen
                     ? "pl-10"
                     : "absolute left-full top-0 bg-gray-800 rounded-md shadow-md px-2 py-2 hidden group-hover:block z-20 w-40"
                 }`}
               >
                 <NavLink to="/projecta">
-                  <li className="hover:bg-[#fff] px-3  py-2 rounded text-gray-200 cursor-pointer text-gray-900">
+                  <li className="hover:bg-[#fff] px-3 py-2 rounded text-gray-900 cursor-pointer">
                     Project A
                   </li>
                 </NavLink>
                 <NavLink to="/projectb">
-                  <li className="hover:bg-[#fff] px-3 py-2 rounded text-gray-200 cursor-pointer text-gray-900">
+                  <li className="hover:bg-[#fff] px-3 py-2 rounded text-gray-900 cursor-pointer">
                     Project B
+                  </li>
+                </NavLink>
+              </ul>
+            ) : null}
+          </li>
+
+          <li id="methods" className="group relative list-none">
+            <div
+              onClick={() => toggleProjectsDropdown("methods")}
+              className="flex items-center justify-between gap-2 hover:bg-[#fff] text-sm text-gray-300 px-3 py-2 rounded-md cursor-pointer transition"
+            >
+              <div className="flex items-center gap-3 text-gray-900">
+                {isOpen && (
+                  <>
+                    <HiFolder className="text-xl" />
+                    <span>Methods</span>
+                  </>
+                )}
+              </div>
+              {isOpen && (
+                <HiChevronDown
+                  className={`text-sm transition-transform duration-200 text-gray-900 ${
+                    dropdowns.methods ? "rotate-180" : ""
+                  }`}
+                />
+              )}
+            </div>
+
+            {(dropdowns.methods && isOpen) || !isOpen ? (
+              <ul
+                className={`text-sm mt-1 space-y-1 ${
+                  isOpen
+                    ? "pl-10"
+                    : "absolute left-full top-0 bg-gray-800 rounded-md shadow-md px-2 py-2 hidden group-hover:block z-20 w-40"
+                }`}
+              >
+                <NavLink to="/array">
+                  <li className="hover:bg-[#fff] px-3 py-2 rounded text-gray-900 cursor-pointer">
+                    Arrays Method
+                  </li>
+                </NavLink>
+                <NavLink to="/string">
+                  <li className="hover:bg-[#fff] px-3 py-2 rounded text-gray-900 cursor-pointer">
+                    String Method
+                  </li>
+                </NavLink>
+                <NavLink to="/math">
+                  <li className="hover:bg-[#fff] px-3 py-2 rounded text-gray-900 cursor-pointer">
+                    Math Method
                   </li>
                 </NavLink>
               </ul>

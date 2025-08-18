@@ -10,7 +10,10 @@ import Reports from "./components/Reports";
 import Navbar from "./components/Navbar";
 import Charts from "./components/Charts";
 import CommonDrawer from "./components/CommonDrawer";
+import ArrayMethod from "./components/ArrayMethod";
+import StringMethod from "./components/StringMethod";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MathMethod from "./components/MathMethod";
 
 function App() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -27,9 +30,12 @@ function App() {
               <Route path="/team" element={<Team />} />
               <Route path="/projecta" element={<ProjectA />} />
               <Route path="/projectb" element={<ProjectB />} />
+              <Route path="/array" element={<ArrayMethod />} />
+              <Route path="/string" element={<StringMethod />} />
+              <Route path="/math" element={<MathMethod />} />
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/documents" element={<Documents />} />
-              <Route path="/reports" element={<Reports />} />
+              <Route path="/reports" element={<Reports/>} />
               <Route path="/chart" element={<Charts />} />
             </Routes>
           </div>
