@@ -11,7 +11,7 @@ function MathPro() {
           title="Abs"
           methodfun="abs()"
           disc="Method returns the absolute value of a number.."
-          input="-5"
+          input="1, 3, 4, -6, -8, 4.5, 5.2, 5, 8, 8.9"
         />
 
         <MathCompiler
@@ -19,7 +19,7 @@ function MathPro() {
           title="Max"
           methodfun="max()"
           disc="Math object returns the largest of the numbers provided as input parameters."
-          input="Mahadev"
+          input="1, 3, 4, -6, -8, 4.5, 5.2, 5, 8, 8.9"
         />
 
         <MathCompiler
@@ -27,14 +27,14 @@ function MathPro() {
           title="Min"
           methodfun="min()"
           disc="Math object returns the smallest of the numbers provided as input parameters."
-          input="Mahadev"
+          input="1, 3, 4, -6, -8, 4.5, 5.2, 5, 8, 8.9"
         />
         <MathCompiler
           method="ROUND"
           title="Round"
           methodfun="round()"
           disc="This method rounds a number to the nearest integer."
-          input="Mahadev"
+          input="1, 3, 4, -6, -8, 4.5, 5.2, 5, 8, 8.9"
         />
 
         <MathCompiler
@@ -42,7 +42,7 @@ function MathPro() {
           title="Ceil"
           methodfun="ceil()"
           disc="number up to the nearest integer."
-          input="Mahadev"
+          input="1, 3, 4, -6, -8, 4.5, 5.2, 5, 8, 8.9"
         />
 
         <MathCompiler
@@ -50,7 +50,7 @@ function MathPro() {
           title="Floor"
           methodfun="floor()"
           disc="This function rounds a number down to the nearest whole integer."
-          input="Mahadev"
+          input="1, 3, 4, -6, -8, 4.5, 5.2, 5, 8, 8.9"
         />
 
         <MathCompiler
@@ -58,7 +58,7 @@ function MathPro() {
           title="Trunc"
           methodfun="trunc()"
           disc="method returns the integer part of the provided number."
-          input="Mahadev"
+          input="1, 3, 4, -6, -8, 4.5, 5.2, 5, 8, 8.9"
         />
        
       </div>

@@ -37,20 +37,6 @@ const Card = ({ value, title, description, per, img1 }) => {
           </span>
         </div>
       </div>
-
-      {/* <div className="bg-white rounded-lg px-4 py-6 sm:px-6 sm:py-8 shadow-xl w-full max-w-sm mx-auto">
-      <div className="flex justify-center">
-        <span className="rounded-full bg-gray-100 shadow-lg p-3">
-          <FaBeer color="black" size="1.25rem" />
-        </span>
-      </div>
-      <h3 className="text-center text-gray-900 mt-4 font-semibold text-2xl sm:text-3xl lg:text-4xl">
-        {value}
-      </h3>
-      <h2 className="text-center text-gray-600 mt-2 text-base sm:text-lg font-medium">
-        {title}
-      </h2>
-    </div> */}
     </>
   );
 };

@@ -12,7 +12,6 @@ function Form() {
       
     },
 
-    // Add the input validation rules
     validate: (values) => {
       const errors = {};
       if (!values.name) {

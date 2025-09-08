@@ -6,7 +6,7 @@ const Navbar = ({ onDrawerToggle }) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => setShowDropdown(!showDropdown);
-  console.log(showDropdown);
+  // console.log(showDropdown);
 
   return (
     <div className="bg-[#f4f7fb] text-white px-2 py-2 flex justify-between items-center shadow-md">

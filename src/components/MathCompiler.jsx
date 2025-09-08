@@ -88,7 +88,7 @@ function StringCompiler({ method, title, methodfun, disc, input }) {
             {method} Submit
           </button>
 
-          {output.length > 0 && (
+          {output.length > 0  (
             <div className="mt-4 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm">
               <span className="font-bold text-gray-700 dark:text-gray-200 mt-4">
                 Output:
