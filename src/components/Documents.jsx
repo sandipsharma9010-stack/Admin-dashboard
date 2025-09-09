@@ -6,10 +6,9 @@ import PromosesData from "./Api/PromosesData";
 import SignupForm from "./Promises/SignupForm";
 import UserProfile from "./Promises/UserProfile";
 import UniqueData from "./Promises/UniqueData";
-import ParentForm from "./commonForm/ParentForm";
+import ParentForm from "./commonform/ParentForm";
 import ParentComponent from "./commoncomponents/ParentComponent";
-
-
+import ParentDataForm from "./useFormikForm/ParentDataForm";
 
 function Documents() {
   //   try{
@@ -26,17 +25,16 @@ function Documents() {
 
   //   }
 
-
-
   return (
     <>
 
-         <ParentComponent/>
-    <ParentForm/>
-        <UniqueData/>
-    <UserProfile/>
-<SignupForm/>
- 
+    <ParentDataForm/>
+      <ParentComponent />
+      <ParentForm />
+      <UniqueData />
+      <UserProfile />
+      <SignupForm />
+
       <h1 className="text-2xl font-bold">Documents</h1>
 
       <div className="bg-white dark:bg-gray-900 font-bold w-100">
@@ -46,13 +44,11 @@ function Documents() {
           repellat.
         </p>
       </div>
-  
+
       <PromosesData />
       {/* <DataDelete /> */}
       <DataAxios />
       {/* <DataFetch /> */}
-
- 
     </>
   );
 }
