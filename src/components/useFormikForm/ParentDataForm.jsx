@@ -21,8 +21,9 @@ const ParentDataForm = () => {
       address: Yup.string().required("Address is required"),
       address2: Yup.string().required("Address2 is required"),
       age: Yup.number()
-        .required("Age is required")
-        .positive("Must be positive"),
+        .required("Quantity is required")
+        .min(1, "Quantity must be at least 1")
+        .integer("Quantity must be an integer"),
       textarea: Yup.string().required("textarea is required"),
       gender: Yup.string().required("Gender is required"),
     }),
@@ -32,12 +33,16 @@ const ParentDataForm = () => {
   });
 
   return (
-    <div className="flex justify-center">
-      <form onSubmit={formik.handleSubmit}>
+    <div className="flex justify-center my-8">
+      <form
+        className="w-full max-w-4xl bg-white rounded-xl shadow-md p-8 space-y-6"
+        onSubmit={formik.handleSubmit}
+      >
         <div className="grid grid-cols-2 gap-6">
           <TextInput
-            label="Name"
+            label="Name *"
             name="name"
+            placeholder="Enter Your Name"
             value={formik.values.name}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -46,8 +51,9 @@ const ParentDataForm = () => {
           />
 
           <TextInput
-            label="Address"
+            label="Address *"
             name="address"
+            placeholder="Enter Your Address"
             value={formik.values.address}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -57,8 +63,9 @@ const ParentDataForm = () => {
         </div>
         <div className="grid grid-cols-2 gap-6">
           <TextInput
-            label="Address 2"
+            label="Address2 *"
             name="address2"
+            placeholder="Enter Your Address2"
             value={formik.values.address2}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -67,8 +74,9 @@ const ParentDataForm = () => {
           />
 
           <NumberInput
-          
+            label="Number *"
             name="age"
+            placeholder="Enter Your Number"
             value={formik.values.age}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -77,8 +85,9 @@ const ParentDataForm = () => {
           />
         </div>
         <TextArea
-          label="Description"
+          label="Description *"
           name="textarea"
+          placeholder="Enter Your Description"
           value={formik.values.textarea}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -87,7 +96,7 @@ const ParentDataForm = () => {
         />
 
         <SelectInput
-          label="Gender"
+          label="Gender *"
           name="gender"
           value={formik.values.gender}
           onChange={formik.handleChange}

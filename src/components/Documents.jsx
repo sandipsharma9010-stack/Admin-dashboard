@@ -30,7 +30,7 @@ function Documents() {
 
     <ParentDataForm/>
       <ParentComponent />
-      <ParentForm />
+      {/* <ParentForm /> */}
       <UniqueData />
       <UserProfile />
       <SignupForm />
