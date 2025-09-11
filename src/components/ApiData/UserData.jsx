@@ -51,7 +51,7 @@ function UserData() {
         {data.map((post) => (
           <li key={post.id}>
             {post.title}
-            <button className="bg-blue-800 px-2 py-2 rounded gap-5" onClick={() => deletePost(post.id)}>Delete</button>
+            <button className="bg-red-500 px-2 py-2 rounded gap-5 m-2 text-white" onClick={() => deletePost(post.id)}>Delete</button>
           </li>
         ))}
       </ul>
